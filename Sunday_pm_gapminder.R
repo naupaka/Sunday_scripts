@@ -24,6 +24,7 @@ gap.in %>%
 # Calculate the mean population per continent per year for years prior to but not including 1990
 
 # Add iris data frame to environment
+data(iris)
 attach(iris)
 
 # Install tidyr package
