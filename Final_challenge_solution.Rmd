@@ -14,6 +14,17 @@ data.in <- read.table("output/combined_gapMinder.tsv",
                       sep = "\t", header = TRUE)
 ```
 
+```{r}
+country.scatter.plot <- function(country.name){
+    data.in %>%
+        filter(country == country.name) -> filtered.df
+    plot(x = filtered.df$year, 
+         y = filtered.df$gdpPercap,
+         main = paste("GDP by year in", country.name),
+         xlab = "Year",
+         ylab = "GDP per capita")
+}
+```
 
 ```{r, echo=FALSE}
 
