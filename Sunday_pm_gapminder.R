@@ -15,11 +15,24 @@ gap.in <- read.table("output/combined_gapMinder.tsv",
                      header = TRUE) 
 
 gap.in %>%
-    filter(country == "China") %>%
+    filter(country == "China" | country == "Niger") %>%
     select(country, year, pop) %>%
-    group_by(country) %>%
-    summarize(min = min(pop))
+    group_by(country,year) %>%
+    summarize(min = min(pop)) -> data.out
 
 # Challenge
-# Calculate the mean population per continent per year for years prior to 1990
+# Calculate the mean population per continent per year for years prior to but not including 1990
+
+# Add iris data frame to environment
+attach(iris)
+
+# Install tidyr package
+# install.packages("tidyr", dependencies = TRUE)
+
+# load tidyr package
+library("tidyr")
+
+# Turn iris dataset from wide into long format
+iris.long <- gather(iris, "Measurement", "Value", 1:4)
+
 
