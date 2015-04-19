@@ -8,6 +8,9 @@ output: html_document
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Set to TRUE to turn on debugging output
+DEBUG <- FALSE
+
 # Load libraries and data
 library("dplyr")
 data.in <- read.table("output/combined_gapMinder.tsv", 
@@ -26,7 +29,11 @@ country.scatter.plot <- function(country.name){
 }
 ```
 
-```{r, echo=FALSE}
 
+```{r, echo=FALSE}
+for (country in c("China", "Chile", "Cuba")){
+    if (DEBUG) print(country)
+    country.scatter.plot(country)
+}
 ```
 
