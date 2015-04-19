@@ -1,0 +1,21 @@
+---
+title: "Solution to final challenge"
+author: "Naupaka Zimmerman"
+date: "April 19, 2015"
+output: html_document
+---
+
+
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Load libraries and data
+library("dplyr")
+data.in <- read.table("output/combined_gapMinder.tsv", 
+                      sep = "\t", header = TRUE)
+```
+
+
+```{r, echo=FALSE}
+
+```
+
