@@ -1,5 +1,5 @@
 ---
-title: "Solution to final challenge"
+title: "Exploring gapminder: Solution to final challenge"
 author: "Naupaka Zimmerman"
 date: "April 19, 2015"
 output: html_document
@@ -34,6 +34,7 @@ country.scatter.plot <- function(country.name){
 }
 ```
 
+### Scatter plots 
 
 ```{r plot-china-scatter, echo=FALSE}
 country.scatter.plot("China")
