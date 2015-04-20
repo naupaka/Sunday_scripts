@@ -99,4 +99,4 @@ hist(data.in$lifeExp, breaks = 100,
      xlab = "Life Expectancy")
 ```
 
-The non-normality is even more evident with more bins, and there is even a hint that it might be bi-modal, with a second (less frequent) peak near 45 years of age.
+The non-normality is even more evident with more bins, and there is even a hint that it might be bi-modal, with a second (less frequent) peak near 45 years of age. A next step would be to figure out which countries are underlying these global patterns and over that periods of time.
