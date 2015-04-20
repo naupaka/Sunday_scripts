@@ -18,10 +18,14 @@ data.in <- read.table("output/combined_gapMinder.tsv",
                       sep = "\t", header = TRUE)
 ```
 
-```{r}
+```{r define-scatterplot-function, echo=FALSE}
+# function to make a scatter plot of year by GDP per capita for a given country
 country.scatter.plot <- function(country.name){
+    # first filter the data to just the desired rows
     data.in %>%
         filter(country == country.name) -> filtered.df
+
+    # then plot those rows
     plot(x = filtered.df$year, 
          y = filtered.df$gdpPercap,
          main = paste("GDP by year in", country.name),
