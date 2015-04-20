@@ -5,7 +5,7 @@ date: "April 19, 2015"
 output: html_document
 ---
 
-```{r load libraries-and-data, echo=FALSE, message=FALSE, warning=FALSE}
+```{r load-libraries-and-data, echo=FALSE, message=FALSE, warning=FALSE}
 # Load dplyr for data manipulation
 library("dplyr")
 
@@ -83,7 +83,7 @@ Mean life expectancies (MLE) over this period are highest in Oceania, where MLE 
 
 ### Histograms of global life expectancy
 
-```{r plor-default-bins-hist, echo=FALSE}
+```{r plot-default-bins-hist, echo=FALSE}
 # defaults to 14 breaks in this case
 hist(data.in$lifeExp, 
      main = "Distribution of global life expectancy",
