@@ -35,6 +35,23 @@ country.scatter.plot <- function(country.name){
 ```
 
 
+```{r plot-china-scatter, echo=FALSE}
+country.scatter.plot("China")
+```
+
+We see a huge increase in per capita GDP in China starting in the 1990s.
+
+```{r plot-cuba-scatter, echo=FALSE}
+country.scatter.plot("Cuba")
+```
+
+In Cuba, GDP reaches a peak in the 1980s, before becoming much lower in the 1990s, and climbing again after the year 2000.
+
+```{r plot-chile-scatter, echo=FALSE}
+country.scatter.plot("Chile")
+```
+
+The GDP per capita in Chile increases continually, especially after 1990, like China, but in absolute terms, GDP  in Chile is more than twice as high than in China over the same time period.
 }
 ```
 
