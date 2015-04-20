@@ -5,14 +5,15 @@ date: "April 19, 2015"
 output: html_document
 ---
 
-
-
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
-# Set to TRUE to turn on debugging output
-DEBUG <- FALSE
-
-# Load libraries and data
+```{r load libraries-and-data, echo=FALSE, message=FALSE, warning=FALSE}
+# Load dplyr for data manipulation
 library("dplyr")
+
+# Load knitr so we can use the kable() function to format the table output more 
+# nicely in our report below
+library("knitr")
+
+# Read in the gapminder tab-delimited data
 data.in <- read.table("output/combined_gapMinder.tsv", 
                       sep = "\t", header = TRUE)
 ```
