@@ -30,10 +30,6 @@ country.scatter.plot <- function(country.name){
 ```
 
 
-```{r, echo=FALSE}
-for (country in c("China", "Chile", "Cuba")){
-    if (DEBUG) print(country)
-    country.scatter.plot(country)
 }
 ```
 
