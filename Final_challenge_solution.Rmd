@@ -79,3 +79,23 @@ summary.value <- function(continent, column){
 ```
 
 Mean life expectancies (MLE) over this period are highest in Oceania, where MLE is `r summary.value("Oceania", "mean")`. They are lowest in Africa (mean `r summary.value("Africa", "mean")`). While maximum life expectancies are relatively similar across continents, minimum life expectancies vary dramtically, and the lowest values are from Africa (`r summary.value("Africa","min")`) and Asia (`r summary.value("Asia","min")`).
+
+### Histograms of global life expectancy
+
+```{r plor-default-bins-hist, echo=FALSE}
+# defaults to 14 breaks in this case
+hist(data.in$lifeExp, 
+     main = "Distribution of global life expectancy",
+     xlab = "Life expectancy")
+```
+
+We see a peak in life expectancy around 70 years of age, although it also seems that the distribution is non-normal.
+
+```{r plot-addtl-bins-hist, echo=FALSE}
+# We'll increase the number of breaks to 100 to get finer resolution
+hist(data.in$lifeExp, breaks = 100, 
+     main = "Distribution of global life expectancy",
+     xlab = "Life Expectancy")
+```
+
+The non-normality is even more evident with more bins, and there is even a hint that it might be bi-modal, with a second (less frequent) peak near 45 years of age.
