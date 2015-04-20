@@ -52,6 +52,30 @@ country.scatter.plot("Chile")
 ```
 
 The GDP per capita in Chile increases continually, especially after 1990, like China, but in absolute terms, GDP  in Chile is more than twice as high than in China over the same time period.
+
+### Summary statistics
+
+```{r calc-mean-min-max-continents, echo = FALSE}
+# Calculate the mean, min, and max for each continent and store to a data frame
+data.in %>%
+    group_by(continent) %>%
+    summarize(mean = mean(lifeExp), min = min(lifeExp), max = max(lifeExp)) -> summarized.df
+```
+
+```{r display-summary-table, results='asis', echo = FALSE}
+# the kable() function turns a data.frame object into a nicely formatted markdown table
+# that we can include in our html report. We need the as-is chunk option because the output 
+# of the function is markdown and we want this to go directly into the report
+kable(summarized.df, caption = "Life expectancies per continent")
+```
+
+```{r function-for-in-text-values, echo = FALSE}
+summary.value <- function(continent, column){
+    # this function takes a continent name and a column name (e.g. mean, max, or min)
+    # and returns that number formatted to only include 4 digits (using the format() function) 
+    # since we don't want or need the precision here for reporting
+    format(summarized.df[summarized.df$continent == continent, column], digits = 4)
 }
 ```
 
+Mean life expectancies (MLE) over this period are highest in Oceania, where MLE is `r summary.value("Oceania", "mean")`. They are lowest in Africa (mean `r summary.value("Africa", "mean")`). While maximum life expectancies are relatively similar across continents, minimum life expectancies vary dramtically, and the lowest values are from Africa (`r summary.value("Africa","min")`) and Asia (`r summary.value("Asia","min")`).
